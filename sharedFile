@@ -23,15 +23,21 @@ public class WalkAllCommits extends BaseGit {
 		Iterable<RevCommit> commits = git.log().all().call();
 		int count = 0;
 
+		// branch 1
+
 		for (RevCommit commit : commits) {
 			addMsg("LogCommit: " + commit);
 			count++;
 		}
 		addMsg(Integer.toString(count));
 
+		// branch 2
+		
+		// master
+
 		return super.output();
 	}
-// 2nd
+// 2nd ...
 	public static void main(String[] args) throws IOException, GitAPIException {
 		System.out.println(new WalkAllCommits().output());
 	}
