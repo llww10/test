@@ -29,11 +29,9 @@ public class WalkAllCommits extends BaseGit {
 		}
 		addMsg(Integer.toString(count));
 
-// test
-
 		return super.output();
 	}
-
+// ..
 	public static void main(String[] args) throws IOException, GitAPIException {
 		System.out.println(new WalkAllCommits().output());
 	}
