@@ -32,6 +32,8 @@ public class WalkAllCommits extends BaseGit {
 		addMsg(Integer.toString(count));
 
 		// branch 2
+		
+		// checked
 
 		return super.output();
 	}
