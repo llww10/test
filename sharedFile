@@ -33,11 +33,11 @@ public class WalkAllCommits extends BaseGit {
 
 		// branch 2
 		
-		///
+		// master
 
 		return super.output();
 	}
-
+// ..
 	public static void main(String[] args) throws IOException, GitAPIException {
 		System.out.println(new WalkAllCommits().output());
 	}
