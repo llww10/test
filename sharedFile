@@ -44,3 +44,4 @@ public class WalkAllCommits extends BaseGit {
 		System.out.println(new WalkAllCommits().output());
 	}
 }
+
