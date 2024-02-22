@@ -38,7 +38,7 @@ public class WalkAllCommits extends BaseGit {
 		return super.output();
 	}
 
-	// test merging to changes4; checked
+	// from changes7
 
 	public static void main(String[] args) throws IOException, GitAPIException {
 		System.out.println(new WalkAllCommits().output());
