@@ -37,7 +37,7 @@ public class WalkAllCommits extends BaseGit {
 
 		return super.output();
 	}
-// 2nd ...
+// 2nd ... test ; checked
 	public static void main(String[] args) throws IOException, GitAPIException {
 		System.out.println(new WalkAllCommits().output());
 	}
