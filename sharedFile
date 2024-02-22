@@ -1,1 +1,47 @@
-content94 content14
+package jgit.porcelain;
+
+import java.io.IOException;
+
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.revwalk.RevCommit;
+
+import jgit.helper.RepoHelper;
+
+public class WalkAllCommits extends BaseGit {
+
+	public String output() throws IOException, GitAPIException {
+
+		Repository repository = RepoHelper.openRepo();
+		Git git = new Git(repository);
+
+		// use the following instead to list commits on a specific branch
+		// ObjectId branchId = repository.resolve("HEAD");
+		// Iterable<RevCommit> commits = git.log().add(branchId).call();
+
+		Iterable<RevCommit> commits = git.log().all().call();
+		int count = 0;
+
+		// branch 1
+
+		for (RevCommit commit : commits) {
+			addMsg("LogCommit: " + commit);
+			count++;
+		}
+		addMsg(Integer.toString(count));
+
+		// branch 2
+		
+		// master
+
+		return super.output();
+	}
+
+	// test merging to changes4; checked
+
+	public static void main(String[] args) throws IOException, GitAPIException {
+		System.out.println(new WalkAllCommits().output());
+	}
+}
+
